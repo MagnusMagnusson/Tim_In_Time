@@ -17,8 +17,21 @@ if(birth == clock){
     
     vsped = 0;
     hsped = 0;
+    repeat(100){
+        effect_create_above(ef_spark,x + irandom(64), y + irandom(128),irandom(3),c_aqua)
+        effect_create_above(ef_star,x + irandom(64), y + irandom(128),irandom(3),c_white)
+        }
     }
 
+if(death == clock){
+    repeat(100){
+            effect_create_above(ef_spark,x + irandom(64),  y + irandom(128),irandom(3),c_white)
+        }
+    x = -999;
+    y = -999;
+    visible = false;
+}
+    
 if(ds_list_find_value(controller,index) == clock){
     index++;
     switch(ds_list_find_value(controller,index)){
@@ -57,10 +70,5 @@ if(ds_list_find_value(controller,index) == clock){
         }
     }
     command++;
-    if(index+1 >= ds_list_size(controller)){
-        x = -999;
-        y = -999;
-        visible = false;
-    }
     clone_keyboard();
 }

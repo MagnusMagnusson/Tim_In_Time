@@ -82,11 +82,11 @@ worldtick++;
 
 if(keyboard_check_pressed(ord('Z'))){
     time_warp();
-    worldtick = 0;
     var i = instance_create(-999,-999,o_clone);
     i.ID = ds_list_size(clones)-1;
     i.controller = clones[|i.ID];
     init_current(i);
+    worldtick = 0;
 }
 
 if(warping){
