@@ -7,7 +7,7 @@ l = argument2;
 r = argument3;
 
 var topSpeed = 5;
-vsped += .8;
+vsped += .8 * !place_meeting(x,y+vsped + 0.5,o_wall);
 
 var vkey = -l + r,
 hkey = u
@@ -27,7 +27,7 @@ else
     
 if drop
     {
-    if vsped<0
+    if vsped < 0
         {
         vsped+=1.5;
         }
@@ -35,19 +35,19 @@ if drop
     
 if !place_meeting(x+vkey*5,y,o_wall) 
     {    
-    x += vkey*topSpeed
+    x += vkey * topSpeed
     x = clamp(x,1,room_width-1)
     }
 
-if !place_meeting(x,y+vsped,o_wall)
+if !place_meeting(x,y+vsped + .5,o_wall)
     {
-    y+=vsped
+        y += vsped
     }
 else
     {
-    while(place_meeting(x,y+vsped,o_wall))
+    while(place_meeting(x,y+vsped + 0.5,o_wall))
         {
             vsped+=-sign(vsped)*0.5
         }
-    y+=vsped
+        y+=vsped
     }

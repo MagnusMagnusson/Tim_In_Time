@@ -8,7 +8,7 @@
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
-  <bbox_right>127</bbox_right>
+  <bbox_right>119</bbox_right>
   <bbox_top>0</bbox_top>
   <bbox_bottom>127</bbox_bottom>
   <HTile>0</HTile>
@@ -59,5 +59,6 @@
     <frame index="36">images\s_rift_36.png</frame>
     <frame index="37">images\s_rift_37.png</frame>
     <frame index="38">images\s_rift_38.png</frame>
+    <frame index="39">images\s_rift_39.png</frame>
   </frames>
 </sprite>

@@ -30,5 +30,5 @@ if(ctrl.worldtick % 4 == 0){
     r = 8 ( l - 2 )
     command = 9 ( l - 1 )
     */
-    ds_list_add(mypath,x,y,vsped,hsped,u,d,l,r,command);
+    ds_list_add(mypath,x,y,vsped,hsped,u,d,l,r,command,drop);
 }

@@ -33,6 +33,8 @@ warping = false;
 init_current(noone);
 
 worldtick = 0;
+
+//application_surface_draw_enable(false);
 </string>
           </argument>
         </arguments>
@@ -83,16 +85,13 @@ if(warping == 0){
 
 // Start backwards warp.
 if(keyboard_check_pressed(ord('Z')) &amp;&amp; warping == 0){
-    time_warp();
-    var i = instance_create(-999,-999,o_clone);
-    i.ID = ds_list_size(clones)-1;
-    i.controller = clones[|i.ID];
-    i.mypath = o_player.mypath;
-    o_player.mypath = ds_list_create();
-    o_player.command = 0;
-    init_current(i);
-    while(worldtick % 4 != 0){
-        worldtick++;
+    if(stopped()){
+        time_warp();    
+        var i = instance_create(-999,-999,o_clone);
+        init_current(i);
+        while(worldtick % 4 != 0){
+            worldtick++;
+        }
     }
 }
 
@@ -103,6 +102,9 @@ if(warping != 0){ //We are warping to somewhere.
         warping = 0;
         worldtick++;
         o_player.birth = worldtick-1;
+        with(o_clone){
+            clone_safezone();
+        }
     }
     //Warp clones backwards
     if(warping == -1){
@@ -110,19 +112,20 @@ if(warping != 0){ //We are warping to somewhere.
             var length, xx, yy;
             length = ds_list_size(mypath);
             show_debug_message(string(length));
-            if(length &gt;= 2){
-                command = 2*mypath[|length - 1];
-                vright = mypath[|length - 2];
-                vleft = mypath[|length - 3];
-                vdown = mypath[|length - 4];
-                vup = mypath[|length - 5];
-                hsped = mypath[|length - 6];
-                vsped = mypath[|length - 7];
-                y = mypath[|length - 8];
-                x = mypath[|length -9];
+            if(length &gt;= 10){
+                drop = mypath[|length - 1];
+                command = mypath[|length - 2];
+                vright = mypath[|length - 3];
+                vleft = mypath[|length - 4];
+                vdown = mypath[|length - 5];
+                vup = mypath[|length - 6];
+                hsped = mypath[|length - 7];
+                vsped = mypath[|length - 8];
+                y = mypath[|length - 9];
+                x = mypath[|length -10];
                 visible = true;
                 
-                for(var j = 1; j &lt; 10; j++){
+                for(var j = 1; j &lt; 11; j++){
                     ds_list_delete(mypath,length - j);
                 }
                 
@@ -143,6 +146,36 @@ if(warping != 0){ //We are warping to somewhere.
             }
         }
     }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="74">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/*if(warping == 0){
+    draw_surface(application_surface,0,0);
+}
+else{
+    shader_set(shade_bright);
+    draw_surface(application_surface,0,0);
+    shader_reset();
 }
 </string>
           </argument>

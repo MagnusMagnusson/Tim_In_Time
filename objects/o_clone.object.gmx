@@ -46,6 +46,10 @@ originy = ystart;
 birth = 0;
 
 mypath = noone
+
+drop = false;
+
+dying = false;
 </string>
           </argument>
         </arguments>
@@ -93,6 +97,18 @@ mypath = noone
             <string>///Error removal
 if(controller == noone || mypath == noone){
     instance_destroy();
+}
+
+if(ctrl.worldtick &lt; birth){
+    visible = false;
+}
+else{
+    if(ctrl.worldtick &gt; death){
+        visible = false;
+    }
+    else{
+        visible = true;
+    }
 }
 </string>
           </argument>
@@ -166,6 +182,12 @@ clone_record();
             <kind>1</kind>
             <string>draw_self()
 draw_text(x - 16, y + 32,command);
+draw_text(x - 16, y + 48,vsped);
+draw_text(x - 16, y + 64,hsped);
+
+
+draw_text(x - 32, y + 32,birth);
+draw_text(x - 32, y + 16,death);
 </string>
           </argument>
         </arguments>
