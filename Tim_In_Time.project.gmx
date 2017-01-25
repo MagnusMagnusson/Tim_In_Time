@@ -12,6 +12,9 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\movement_record.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\o_player</object>
     <object>objects\ctrl</object>
@@ -21,6 +24,16 @@
   <rooms name="rooms">
     <room>rooms\rm_test</room>
   </rooms>
+  <constants number="8">
+    <constant name="NORIGHT">-4</constant>
+    <constant name="NOLEFT">-3</constant>
+    <constant name="NODOWN">-2</constant>
+    <constant name="NOUP">-1</constant>
+    <constant name="RIGHT">3</constant>
+    <constant name="LEFT">2</constant>
+    <constant name="DOWN">1</constant>
+    <constant name="UP">0</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>
