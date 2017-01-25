@@ -22,6 +22,8 @@
     <script>scripts\clone_record.gml</script>
     <script>scripts\clone_safezone.gml</script>
     <script>scripts\stopped.gml</script>
+    <script>scripts\die.gml</script>
+    <script>scripts\draw_reset.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shade_bright.shader</shader>
