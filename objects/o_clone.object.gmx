@@ -45,7 +45,7 @@ originx = xstart;
 originy = ystart;
 birth = 0;
 
-mypath = ds_list_create();
+mypath = noone
 </string>
           </argument>
         </arguments>
@@ -91,7 +91,7 @@ mypath = ds_list_create();
           <argument>
             <kind>1</kind>
             <string>///Error removal
-if(controller == noone){
+if(controller == noone || mypath == noone){
     instance_destroy();
 }
 </string>
@@ -116,8 +116,10 @@ if(controller == noone){
             <kind>1</kind>
             <string>///Move timclone
 
-clone_keyboard();
-tim_move(vup,vdown,vleft,vright);
+if(ctrl.warping == 0){
+    clone_keyboard();
+    tim_move(vup,vdown,vleft,vright);
+}
 </string>
           </argument>
         </arguments>
@@ -140,6 +142,30 @@ tim_move(vup,vdown,vleft,vright);
             <kind>1</kind>
             <string>///Record Clone Position
 clone_record();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_self()
+draw_text(x - 16, y + 32,command);
 </string>
           </argument>
         </arguments>

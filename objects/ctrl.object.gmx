@@ -81,44 +81,66 @@ if(warping == 0){
             <kind>1</kind>
             <string>///TimeWarp
 
+// Start backwards warp.
 if(keyboard_check_pressed(ord('Z')) &amp;&amp; warping == 0){
     time_warp();
     var i = instance_create(-999,-999,o_clone);
     i.ID = ds_list_size(clones)-1;
     i.controller = clones[|i.ID];
+    i.mypath = o_player.mypath;
+    o_player.mypath = ds_list_create();
+    o_player.command = 0;
     init_current(i);
     while(worldtick % 4 != 0){
         worldtick++;
     }
 }
 
-if(warping != 0){
+if(warping != 0){ //We are warping to somewhere.
     worldtick += 4*warping;
     if(warping == -1 &amp;&amp; !keyboard_check(ord('Z'))){
+    //Stop the warp process.
         warping = 0;
         worldtick++;
         o_player.birth = worldtick-1;
-        with(o_clone){
-            for(var i = 0; i &lt; ds_list_size(controller); i += 2){
-                if(controller[|i] &gt; ctrl.worldtick){
-                    command = i - 1;
-                }
-            }
-        }
     }
-    with(o_clone){
-        var length, xx, yy;
-        length = ds_list_size(mypath);
-        if(length == 0){
-            continue;
-        }
-        else{
-            xx = mypath[|length - 2];
-            yy = mypath[|length - 1];
-            ds_list_delete(mypath,length - 1);
-            ds_list_delete(mypath,length - 2);
-            x = xx;
-            y = yy;
+    //Warp clones backwards
+    if(warping == -1){
+        with(o_clone){
+            var length, xx, yy;
+            length = ds_list_size(mypath);
+            show_debug_message(string(length));
+            if(length &gt;= 2){
+                command = 2*mypath[|length - 1];
+                vright = mypath[|length - 2];
+                vleft = mypath[|length - 3];
+                vdown = mypath[|length - 4];
+                vup = mypath[|length - 5];
+                hsped = mypath[|length - 6];
+                vsped = mypath[|length - 7];
+                y = mypath[|length - 8];
+                x = mypath[|length -9];
+                visible = true;
+                
+                for(var j = 1; j &lt; 10; j++){
+                    ds_list_delete(mypath,length - j);
+                }
+                
+                show_debug_message("warping!");
+            }
+            if(ctrl.worldtick &lt; death &amp;&amp; ctrl.worldtick + 4 &gt; death){
+                repeat(100){
+                    visible = true;
+                    effect_create_above(ef_spark,x + irandom(64),  y + irandom(128),irandom(3),c_white)
+                }  
+            }
+            if(ctrl.worldtick &lt; birth &amp;&amp; ctrl.worldtick + 4 &gt; birth){
+                repeat(100){
+                    visible = false;
+                    effect_create_above(ef_spark,x + irandom(64), y + irandom(128),irandom(3),c_aqua)
+                    effect_create_above(ef_star,x + irandom(64), y + irandom(128),irandom(3),c_white)
+                }  
+            }
         }
     }
 }

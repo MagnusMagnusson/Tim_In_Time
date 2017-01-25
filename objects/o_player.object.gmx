@@ -27,10 +27,14 @@
             <kind>1</kind>
             <string>vsped = 0;
 hsped = 0;
+command = 0;
 
 originx = xstart;
 originy = ystart;
-birth = 1;
+birth = 0;
+death = 999999999;
+
+mypath = ds_list_create();
 </string>
           </argument>
         </arguments>
@@ -83,6 +87,7 @@ tim_move(
             <string>///Recorder
 
 movement_record();
+clone_record();
 </string>
           </argument>
         </arguments>

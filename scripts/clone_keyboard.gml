@@ -27,8 +27,6 @@ if(death == clock){
     repeat(100){
             effect_create_above(ef_spark,x + irandom(64),  y + irandom(128),irandom(3),c_white)
         }
-    x = -999;
-    y = -999;
     visible = false;
 }
     

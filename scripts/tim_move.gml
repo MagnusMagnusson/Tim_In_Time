@@ -1,4 +1,5 @@
 ///tim_move(up,down,left,right)
+
 var u,d,l,r;
 u = argument0;
 d = argument1;
@@ -34,7 +35,7 @@ if drop
     
 if !place_meeting(x+vkey*5,y,o_wall) 
     {    
-    x+=vkey*topSpeed
+    x += vkey*topSpeed
     x = clamp(x,1,room_width-1)
     }
 
