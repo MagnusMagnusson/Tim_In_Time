@@ -56,8 +56,9 @@ worldtick = 0;
           <argument>
             <kind>1</kind>
             <string>///Tick world and count.
-worldtick++;
-
+if(warping == 0){
+    worldtick++;
+}
 </string>
           </argument>
         </arguments>
@@ -80,19 +81,46 @@ worldtick++;
             <kind>1</kind>
             <string>///TimeWarp
 
-if(keyboard_check_pressed(ord('Z'))){
+if(keyboard_check_pressed(ord('Z')) &amp;&amp; warping == 0){
     time_warp();
     var i = instance_create(-999,-999,o_clone);
     i.ID = ds_list_size(clones)-1;
     i.controller = clones[|i.ID];
     init_current(i);
-    worldtick = 0;
+    while(worldtick % 4 != 0){
+        worldtick++;
+    }
 }
 
-if(warping){
-    warping = false;
-    worldtick = 0;
-    
+if(warping != 0){
+    worldtick += 4*warping;
+    if(warping == -1 &amp;&amp; !keyboard_check(ord('Z'))){
+        warping = 0;
+        worldtick++;
+        o_player.birth = worldtick-1;
+        with(o_clone){
+            for(var i = 0; i &lt; ds_list_size(controller); i += 2){
+                if(controller[|i] &gt; ctrl.worldtick){
+                    command = i - 1;
+                }
+            }
+        }
+    }
+    with(o_clone){
+        var length, xx, yy;
+        length = ds_list_size(mypath);
+        if(length == 0){
+            continue;
+        }
+        else{
+            xx = mypath[|length - 2];
+            yy = mypath[|length - 1];
+            ds_list_delete(mypath,length - 1);
+            ds_list_delete(mypath,length - 2);
+            x = xx;
+            y = yy;
+        }
+    }
 }
 </string>
           </argument>

@@ -19,7 +19,11 @@
     <script>scripts\tim_move.gml</script>
     <script>scripts\time_warp.gml</script>
     <script>scripts\init_current.gml</script>
+    <script>scripts\clone_record.gml</script>
   </scripts>
+  <shaders name="shaders">
+    <shader type="GLSLES">shaders\shader0.shader</shader>
+  </shaders>
   <objects name="objects">
     <object>objects\o_player</object>
     <object>objects\ctrl</object>
