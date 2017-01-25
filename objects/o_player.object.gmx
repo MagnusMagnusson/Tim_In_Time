@@ -27,6 +27,10 @@
             <kind>1</kind>
             <string>vsped = 0;
 hsped = 0;
+
+originx = xstart;
+originy = ystart;
+birth = 1;
 </string>
           </argument>
         </arguments>

@@ -4,9 +4,24 @@
 var clock = ctrl.worldtick;
 var index = command * 2;
 
-if(controller[|index] == clock){
+if(birth == clock){
+    x = originx;
+    y = originy;
+    command = 0;
+    visible = true;
+    
+    vup = false;
+    vdown = false;
+    vleft = false;
+    vright = false;
+    
+    vsped = 0;
+    hsped = 0;
+    }
+
+if(ds_list_find_value(controller,index) == clock){
     index++;
-    switch(controller[|index]){
+    switch(ds_list_find_value(controller,index)){
         case UP:{
             vup = true;
             break;
@@ -42,5 +57,10 @@ if(controller[|index] == clock){
         }
     }
     command++;
+    if(index+1 >= ds_list_size(controller)){
+        x = -999;
+        y = -999;
+        visible = false;
+    }
     clone_keyboard();
 }
