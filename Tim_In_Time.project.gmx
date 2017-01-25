@@ -10,6 +10,7 @@
     <sprite>sprites\s_clone</sprite>
     <sprite>sprites\s_wall</sprite>
     <sprite>sprites\s_rift</sprite>
+    <sprite>sprites\s_button</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -24,6 +25,7 @@
     <script>scripts\stopped.gml</script>
     <script>scripts\die.gml</script>
     <script>scripts\draw_reset.gml</script>
+    <script>scripts\clean.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shade_bright.shader</shader>
@@ -34,9 +36,12 @@
     <object>objects\o_wall</object>
     <object>objects\o_rift</object>
     <object>objects\o_clone</object>
+    <object>objects\o_player_here</object>
+    <object>objects\o_button</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_test</room>
+    <room>rooms\room1</room>
   </rooms>
   <constants number="8">
     <constant name="NORIGHT">-4</constant>
