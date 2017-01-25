@@ -7,6 +7,7 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprite>sprites\s_tim</sprite>
+    <sprite>sprites\s_clone</sprite>
     <sprite>sprites\s_wall</sprite>
     <sprite>sprites\s_rift</sprite>
   </sprites>
@@ -14,12 +15,16 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\movement_record.gml</script>
+    <script>scripts\clone_keyboard.gml</script>
+    <script>scripts\tim_move.gml</script>
+    <script>scripts\time_warp.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\o_player</object>
     <object>objects\ctrl</object>
     <object>objects\o_wall</object>
     <object>objects\o_rift</object>
+    <object>objects\o_clone</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_test</room>

@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>s_tim</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -25,8 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>vsped = 0;
-hsped = 0;
+            <string>///Init
+ID = noone;
+controller = noone;
+command = 0;
+
+vup = false;
+vdown = false;
+vleft = false;
+vright = false;
 </string>
           </argument>
         </arguments>
@@ -49,13 +56,10 @@ hsped = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///move tim
-tim_move(
-    keyboard_check(vk_up),
-    keyboard_check(vk_down),
-    keyboard_check(vk_left),
-    keyboard_check(vk_right)
-);
+            <string>///Error removal
+if(controller == noone){
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
@@ -76,9 +80,9 @@ tim_move(
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Recorder
+            <string>///Move timclone
 
-movement_record();
+tim_move(vup,vdown,vleft,vright);
 </string>
           </argument>
         </arguments>
