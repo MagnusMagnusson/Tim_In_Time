@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>o_player_here</parentName>
+  <parentName>self</parentName>
   <maskName>s_tim</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -133,6 +133,11 @@ else{
         visible = true;
     }
 }
+
+if(!visible &amp;&amp; ctrl.warping == 0){
+    x = -100;
+    y = -100;
+}
 </string>
           </argument>
         </arguments>
@@ -179,28 +184,6 @@ if(ctrl.warping == 0){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Record Clone Position
-clone_record();
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///Dying
 die()
 </string>
@@ -226,13 +209,13 @@ die()
           <argument>
             <kind>1</kind>
             <string>draw_self()
-draw_text(x - 16, y + 32,command);
+draw_text(x - 16, y + 32,command);/*
 draw_text(x - 16, y + 48,vsped);
 draw_text(x - 16, y + 64,hsped);
 
 
 draw_text(x - 32, y + 32,birth);
-draw_text(x - 32, y + 16,death);
+draw_text(x - 32, y + 16,death);*/
 </string>
           </argument>
         </arguments>

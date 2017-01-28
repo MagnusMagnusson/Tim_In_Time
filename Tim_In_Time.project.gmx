@@ -11,6 +11,7 @@
     <sprite>sprites\s_wall</sprite>
     <sprite>sprites\s_rift</sprite>
     <sprite>sprites\s_button</sprite>
+    <sprite>sprites\s_door</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -26,6 +27,10 @@
     <script>scripts\die.gml</script>
     <script>scripts\draw_reset.gml</script>
     <script>scripts\clean.gml</script>
+    <script>scripts\keyframe_save.gml</script>
+    <script>scripts\keyframe_load.gml</script>
+    <script>scripts\keyframe_sanitize.gml</script>
+    <script>scripts\keyframe_sanitize_all.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shade_bright.shader</shader>
@@ -38,6 +43,7 @@
     <object>objects\o_clone</object>
     <object>objects\o_player_here</object>
     <object>objects\o_button</object>
+    <object>objects\o_door</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_test</room>

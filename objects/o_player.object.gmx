@@ -39,6 +39,10 @@ mypath = ds_list_create();
 drop = false;
 
 dying = false;
+
+ID = 0;
+nr = 0;
+
 </string>
           </argument>
         </arguments>
@@ -85,12 +89,14 @@ dying = false;
           <argument>
             <kind>1</kind>
             <string>///move tim
-tim_move(
-    keyboard_check(vk_up),
-    keyboard_check(vk_down),
-    keyboard_check(vk_left),
-    keyboard_check(vk_right)
-);
+if(ctrl.warping == 0){
+    tim_move(
+        keyboard_check(vk_up),
+        keyboard_check(vk_down),
+        keyboard_check(vk_left),
+        keyboard_check(vk_right)
+    );
+}
 </string>
           </argument>
         </arguments>
@@ -114,7 +120,6 @@ tim_move(
             <string>///Recorder
 
 movement_record();
-clone_record();
 </string>
           </argument>
         </arguments>
