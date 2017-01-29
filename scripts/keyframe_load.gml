@@ -11,6 +11,12 @@ ctrl.worldtick = ds_stack_pop(frame);
 while(ds_stack_size(frame) > 1){
     var nr = ds_stack_pop(frame);
     var thing = ctrl.clones[? string(nr)];
+    if(is_undefined(thing) || !instance_exists(thing)){
+        for(var j = 0; j < 10; j++){
+            ds_stack_pop(frame);
+        }
+        continue;
+    }
    // show_message(string(nr) + " O_O " + string(thing) + ":" + string(thing.object_index) + " = " + string(o_clone.object_index));
     if(thing.object_index == o_clone){
         thing.x = ds_stack_pop(frame);

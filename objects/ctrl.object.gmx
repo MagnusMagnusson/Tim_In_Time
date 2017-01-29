@@ -138,42 +138,44 @@ if(warping == 0){
             <string>///TimeWarp
 
 // Start backwards warp.
-if(keyboard_check_pressed(ord('Z')) &amp;&amp; warping == 0){
-    if(stopped()){
-        time_warp();    
-        var i = instance_create(-999,-999,o_clone);
-        init_current(i);
-    }
-}
-
-if(warping != 0){ //We are warping to somewhere.
-    //Warp clones backwards
-    if(warping == -1){
-        if(!ds_stack_empty(timestamps)){
-            var frame;
-            frame = ds_stack_pop(timestamps);
-            keyframe_load(frame,true);
-        }
-        else{
-            worldtick -= 4;
+if( instance_exists(o_player)){
+    if(keyboard_check_pressed(ord('Z')) &amp;&amp; warping == 0){
+        if(stopped()){
+            time_warp();    
+            var i = instance_create(-999,-999,o_clone);
+            init_current(i);
         }
     }
     
-    if(warping == -1 &amp;&amp; !keyboard_check(ord('Z'))){
-    //Stop the warp process.
-        warping = 0;
-        o_player.birth = worldtick-1;
-        o_player.originx = o_player.x;
-        o_player.originy = o_player.y;
-        with(o_clone){
-            clone_safezone();/*
-            for(var i = 0; i &lt; ds_list_size(controller); i+=2){
-                if(controller[|i] &gt;= ctrl.worldtick){
-                    command = i/2;
-                    i = ds_list_size(controller);
-                    break;
-                }
-            }*/
+    if(warping != 0){ //We are warping to somewhere.
+        //Warp clones backwards
+        if(warping == -1){
+            if(!ds_stack_empty(timestamps)){
+                var frame;
+                frame = ds_stack_pop(timestamps);
+                keyframe_load(frame,true);
+            }
+            else{
+                worldtick -= 4;
+            }
+        }
+        
+        if(warping == -1 &amp;&amp; !keyboard_check(ord('Z'))){
+        //Stop the warp process.
+            warping = 0;
+            o_player.birth = worldtick-1;
+            o_player.originx = o_player.x;
+            o_player.originy = o_player.y;
+            with(o_clone){
+                clone_safezone();/*
+                for(var i = 0; i &lt; ds_list_size(controller); i+=2){
+                    if(controller[|i] &gt;= ctrl.worldtick){
+                        command = i/2;
+                        i = ds_list_size(controller);
+                        break;
+                    }
+                }*/
+            }
         }
     }
 }
@@ -210,6 +212,38 @@ if(worldtick == 0){
         effect_create_above(ef_star,o_player.x + irandom(64), o_player.y + irandom(128),irandom(3),c_white)
         }
     }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///restart
+
+if keyboard_check_pressed(ord('R')){
+    with(o_player){
+        clean(id);
+    }
+    with(o_clone){
+        clean(id);
+    }
+    clean(id);
+    room_restart();
 }
 </string>
           </argument>

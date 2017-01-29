@@ -19,7 +19,7 @@ if(birth == clock){
     hsped = 0;
         audio_play_sound(snd_warp,2,false);
     repeat(100){
-        effect_create_above(ef_spark,x + irandom(64), y + irandom(128),irandom(3),c_aqua)
+        effect_create_above(ef_spark,x + irandom(64), y + irandom(128),irandom(3),choose(c_white,c_aqua))
         }
     }
 

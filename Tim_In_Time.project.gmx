@@ -21,22 +21,32 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\movement_record.gml</script>
-    <script>scripts\clone_keyboard.gml</script>
-    <script>scripts\tim_move.gml</script>
-    <script>scripts\time_warp.gml</script>
-    <script>scripts\init_current.gml</script>
-    <script>scripts\clone_record.gml</script>
-    <script>scripts\clone_safezone.gml</script>
-    <script>scripts\stopped.gml</script>
-    <script>scripts\die.gml</script>
-    <script>scripts\draw_reset.gml</script>
-    <script>scripts\clean.gml</script>
-    <script>scripts\keyframe_save.gml</script>
-    <script>scripts\keyframe_load.gml</script>
-    <script>scripts\keyframe_sanitize.gml</script>
-    <script>scripts\keyframe_sanitize_all.gml</script>
-    <script>scripts\kill.gml</script>
+    <scripts name="keyframes">
+      <script>scripts\keyframe_sanitize.gml</script>
+      <script>scripts\keyframe_load.gml</script>
+      <script>scripts\keyframe_save.gml</script>
+      <script>scripts\keyframe_sanitize_all.gml</script>
+    </scripts>
+    <scripts name="draw">
+      <script>scripts\draw_reset.gml</script>
+    </scripts>
+    <scripts name="p_actions">
+      <script>scripts\kill.gml</script>
+      <script>scripts\tim_move.gml</script>
+      <script>scripts\stopped.gml</script>
+      <script>scripts\die.gml</script>
+    </scripts>
+    <scripts name="control">
+      <script>scripts\time_warp.gml</script>
+      <script>scripts\clean.gml</script>
+      <script>scripts\init_current.gml</script>
+    </scripts>
+    <scripts name="clones">
+      <script>scripts\clone_record.gml</script>
+      <script>scripts\movement_record.gml</script>
+      <script>scripts\clone_keyboard.gml</script>
+      <script>scripts\clone_safezone.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shade_bright.shader</shader>
@@ -57,8 +67,9 @@
     <object>objects\you_died</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_test</room>
-    <room>rooms\room1</room>
+    <room>rooms\lvl_1</room>
+    <room>rooms\lvl_2</room>
+    <room>rooms\lvl_3</room>
   </rooms>
   <constants number="8">
     <constant name="NORIGHT">-4</constant>
