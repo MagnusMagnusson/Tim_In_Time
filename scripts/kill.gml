@@ -13,6 +13,7 @@ if(victim = o_player.id){
     }
     ctrl.alarm[1] = 180;
     instance_create(room_width div 2, - 50,  you_died);
+    return false;
 }
 
 if(victim.object_index = o_clone){
@@ -29,4 +30,5 @@ if(victim.object_index = o_clone){
             }
         }
     }
+    return false;
 }

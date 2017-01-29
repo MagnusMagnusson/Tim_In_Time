@@ -17,8 +17,12 @@
     <sprite>sprites\s_button</sprite>
     <sprite>sprites\s_door</sprite>
     <sprite>sprites\sprite7</sprite>
+    <sprite>sprites\sprite8</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\background0</background>
+    <background>background\background1</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="keyframes">
@@ -65,9 +69,11 @@
     <object>objects\o_button</object>
     <object>objects\o_door</object>
     <object>objects\you_died</object>
+    <object>objects\o_updown</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\lvl_1</room>
+    <room>rooms\lvl_4</room>
     <room>rooms\lvl_2</room>
     <room>rooms\lvl_3</room>
   </rooms>
