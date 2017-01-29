@@ -50,6 +50,8 @@ mypath = noone
 drop = false;
 
 dying = false;
+
+stuck = 20;
 </string>
           </argument>
         </arguments>
@@ -135,8 +137,8 @@ else{
 }
 
 if(!visible &amp;&amp; ctrl.warping == 0){
-    x = -100;
-    y = -100;
+    x = -900;
+    y = -900;
 }
 </string>
           </argument>
@@ -160,7 +162,7 @@ if(!visible &amp;&amp; ctrl.warping == 0){
             <kind>1</kind>
             <string>///Move timclone
 
-if(ctrl.warping == 0){
+if(ctrl.warping == 0 &amp;&amp; visible){
     clone_keyboard();
     tim_move(vup,vdown,vleft,vright);
 }

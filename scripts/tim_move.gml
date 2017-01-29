@@ -45,9 +45,26 @@ if !place_meeting(x,y+vsped + .5,o_wall)
     }
 else
     {
+    lastsped = vsped;
+    if(place_meeting(x,y,o_door) && abs(hsped < 0.5)){
+        stuck--;
+        if(!stuck){
+            effect_create_above(ef_explosion,x,y,100,c_white);
+            repeat(20){
+                effect_create_above(ef_firework,x + irandom(64),y+ irandom(128),100,irandom(c_white));
+            }
+            kill(id);
+        }
+    }
+    else{
+        stuck = min(20,stuck+1);
+    }
     while(place_meeting(x,y+vsped + 0.5,o_wall))
         {
-            vsped+=-sign(vsped)*0.5
+            vsped += -sign(vsped)*0.5
+            if(sign(vsped) != sign(lastsped) || vsped == 0){
+                break;
+            }
         }
         y+=vsped
     }

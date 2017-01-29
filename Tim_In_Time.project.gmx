@@ -4,14 +4,19 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_crack</sound>
+    <sound>sound\snd_warp</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\s_tim</sprite>
+    <sprite>sprites\sprite6</sprite>
     <sprite>sprites\s_clone</sprite>
     <sprite>sprites\s_wall</sprite>
     <sprite>sprites\s_rift</sprite>
     <sprite>sprites\s_button</sprite>
     <sprite>sprites\s_door</sprite>
+    <sprite>sprites\sprite7</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -31,10 +36,15 @@
     <script>scripts\keyframe_load.gml</script>
     <script>scripts\keyframe_sanitize.gml</script>
     <script>scripts\keyframe_sanitize_all.gml</script>
+    <script>scripts\kill.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shade_bright.shader</shader>
   </shaders>
+  <fonts name="fonts">
+    <font>fonts\fnt_big</font>
+    <font>fonts\fnt_default</font>
+  </fonts>
   <objects name="objects">
     <object>objects\o_player</object>
     <object>objects\ctrl</object>
@@ -44,6 +54,7 @@
     <object>objects\o_player_here</object>
     <object>objects\o_button</object>
     <object>objects\o_door</object>
+    <object>objects\you_died</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_test</room>

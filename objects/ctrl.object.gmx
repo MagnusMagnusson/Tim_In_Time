@@ -47,6 +47,49 @@ worldtick = -room_speed*3;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string></string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>room_restart()
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -161,6 +204,7 @@ if(worldtick == 0){
         with(o_player_here){
             instance_destroy();
         }
+        audio_play_sound(snd_warp,2,false);
         repeat(50){
         effect_create_above(ef_spark,o_player.x + irandom(32+64) - 16, o_player.y + irandom(32 +128) - 16,irandom(3),c_aqua)
         effect_create_above(ef_star,o_player.x + irandom(64), o_player.y + irandom(128),irandom(3),c_white)
@@ -227,6 +271,8 @@ warping = false;
 init_current(noone);
 
 worldtick = -room_speed*3;
+
+audio_play_sound(snd_crack,2,false);
 </string>
           </argument>
         </arguments>
@@ -308,17 +354,9 @@ for(var i = 0; i &lt; ds_list_size(current); i++){
             <string>///Fadeout
 
 if(instance_exists(o_player) &amp;&amp; o_player.dying){
-show_debug_message("1");
-    draw_set_color(c_white);
-    draw_set_alpha(1 - o_player.image_alpha)
-    draw_rectangle(0,0,room_width,room_height,false);
     draw_reset();
 }
-if(!instance_exists(o_player) &amp;&amp; !instance_exists(o_player_here)){   
-show_debug_message("Chroma"); 
-    draw_set_color(c_white);
-    draw_set_alpha(1)
-    draw_rectangle(0,0,room_width,room_height,false);
+if(!instance_exists(o_player) &amp;&amp; !instance_exists(o_player_here) &amp;&amp; !alarm[1]){   
     draw_reset();
     room_goto_next();
 }
