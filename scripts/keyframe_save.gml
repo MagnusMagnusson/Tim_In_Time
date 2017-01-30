@@ -25,6 +25,14 @@ with(o_player){
     ds_stack_push(frame,drop,command,r,l,d,u,hsped,vsped,y,x,nr);
 }
 
+with(o_updown){  
+    ds_stack_push(frame,open,x,y,id);
+}
+
+with(o_door){
+    ds_stack_push(frame,open,image_index,id);
+}
+
 ds_stack_push(frame,ctrl.worldtick)
 
 return frame;

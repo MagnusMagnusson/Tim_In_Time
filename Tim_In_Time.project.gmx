@@ -71,12 +71,15 @@
     <object>objects\o_door</object>
     <object>objects\you_died</object>
     <object>objects\o_updown</object>
+    <object>objects\o_stopper</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\lvl_1</room>
     <room>rooms\lvl_2</room>
     <room>rooms\lvl_3</room>
     <room>rooms\lvl_4</room>
+    <room>rooms\lvl_5</room>
+    <room>rooms\lvl_6</room>
   </rooms>
   <constants number="8">
     <constant name="NORIGHT">-4</constant>

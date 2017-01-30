@@ -46,7 +46,7 @@ if !place_meeting(x,y+vsped + .5,o_wall)
 else
     {
     lastsped = vsped;
-    if(place_meeting(x,y,o_door) && abs(hsped < 0.5)){
+    if(place_meeting(x,y,o_wall) && abs(hsped < 0.5)){
         stuck--;
         if(!stuck){
             effect_create_above(ef_explosion,x,y,100,c_white);

@@ -10,6 +10,19 @@ ctrl.worldtick = ds_stack_pop(frame);
 
 while(ds_stack_size(frame) > 1){
     var nr = ds_stack_pop(frame);
+    if(instance_exists(nr)){
+        if(nr.object_index == o_updown){
+            nr.y =  ds_stack_pop(frame);
+            nr.x =  ds_stack_pop(frame);
+            nr.open =  ds_stack_pop(frame);
+            continue;
+        }
+        if(nr.object_index == o_door){
+            nr.image_index =  ds_stack_pop(frame);
+            nr.open =  ds_stack_pop(frame);
+            continue;
+        }
+    }
     var thing = ctrl.clones[? string(nr)];
     if(is_undefined(thing) || !instance_exists(thing)){
         for(var j = 0; j < 10; j++){
