@@ -74,6 +74,7 @@
     <object>objects\o_stopper</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\lvl_7</room>
     <room>rooms\lvl_1</room>
     <room>rooms\lvl_2</room>
     <room>rooms\lvl_3</room>
