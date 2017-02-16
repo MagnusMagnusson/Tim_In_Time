@@ -3,13 +3,34 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
+  <datafiles number="1" name="datafiles">
+    <datafile>
+      <name>Tal 007.m4a</name>
+      <exists>-1</exists>
+      <size>49598</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>Tal 007.m4a</filename>
+    </datafile>
+  </datafiles>
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\snd_crack</sound>
+    <sound>sound\snd_boom</sound>
     <sound>sound\snd_warp</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\s_tim</sprite>
+    <sprite>sprites\s_lily</sprite>
     <sprite>sprites\sprite6</sprite>
     <sprite>sprites\s_clone</sprite>
     <sprite>sprites\s_wall</sprite>
@@ -19,6 +40,9 @@
     <sprite>sprites\sprite7</sprite>
     <sprite>sprites\sprite8</sprite>
     <sprite>sprites\sprite9</sprite>
+    <sprite>sprites\sprite11</sprite>
+    <sprite>sprites\s_puff</sprite>
+    <sprite>sprites\s_heart</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -72,15 +96,22 @@
     <object>objects\you_died</object>
     <object>objects\o_updown</object>
     <object>objects\o_stopper</object>
+    <objects name="cutscene">
+      <object>objects\o_lily</object>
+      <object>objects\o_car</object>
+      <object>objects\o_tim</object>
+      <object>objects\o_heart</object>
+    </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\lvl_7</room>
+    <room>rooms\s_opening</room>
     <room>rooms\lvl_1</room>
     <room>rooms\lvl_2</room>
     <room>rooms\lvl_3</room>
     <room>rooms\lvl_4</room>
     <room>rooms\lvl_5</room>
     <room>rooms\lvl_6</room>
+    <room>rooms\lvl_7</room>
   </rooms>
   <constants number="8">
     <constant name="NORIGHT">-4</constant>

@@ -25,31 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>vsped = 0;
-hsped = 0;
-command = 0;
-
-originx = xstart;
-originy = ystart;
-birth = 0;
-death = 999999999;
-
-mypath = ds_list_create();
-
-drop = false;
-
-dying = false;
-
-ID = 0;
-nr = 0;
-image_speed = 0;
-stuck = 20;
+            <string>image_speed = 0;
+count = 3;
 </string>
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="1" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -66,13 +47,13 @@ stuck = 20;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>clean(id)
+            <string>alarm[0] = room_speed * 5;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="2" enumb="4">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -89,19 +70,45 @@ stuck = 20;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///move tim
-if(ctrl.warping == 0){
-    tim_move(
-        keyboard_check(vk_up),
-        keyboard_check(vk_down),
-        keyboard_check(vk_left),
-        keyboard_check(vk_right)
-    );
+            <string>room_goto_next();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>repeat(3){
+audio_play_sound(snd_boom,2,false);
+    effect_create_above(ef_explosion,x + irandom_range(-400,200),y + irandom_range(-32,256),irandom(3),irandom(c_white));
+}
+count--
+if(count &lt;= 0){
+    alarm[4] = 5;
+}else{
+    alarm[3] = max(1,count / 15);
 }
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="2" enumb="2">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -118,40 +125,20 @@ if(ctrl.warping == 0){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Recorder
+            <string>image_index++;
+o_lily.image_index++;
+o_car.image_index++;
 
-movement_record();
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///dying 
-
-///Dying
-
-die();
+audio_play_sound(snd_boom,2,false);
+effect_create_above(ef_explosion,x + irandom(256) - 128,y + irandom(128),3,c_red);
+count = 100;
+alarm[3] = room_speed;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="2" enumb="1">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -168,11 +155,38 @@ die();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
-
-draw_text(x - 16, y + 32,command);
-draw_text(x - 16, y + 48,vsped);
-draw_text(x - 16, y + 64,hsped);
+            <string>count--;
+instance_create(x - random(128), y - random(32),o_heart);
+if(count){
+    alarm[1] = room_speed / 3;
+}
+else{
+    alarm[2] = room_speed * 4;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>image_xscale = -1;
+alarm[1] = room_speed;
 </string>
           </argument>
         </arguments>
