@@ -3,25 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="1" name="datafiles">
-    <datafile>
-      <name>Tal 007.m4a</name>
-      <exists>-1</exists>
-      <size>49598</size>
-      <exportAction>2</exportAction>
-      <exportDir></exportDir>
-      <overwrite>0</overwrite>
-      <freeData>-1</freeData>
-      <removeEnd>0</removeEnd>
-      <store>0</store>
-      <ConfigOptions>
-        <Config name="Default">
-          <CopyToMask>9223372036854775807</CopyToMask>
-        </Config>
-      </ConfigOptions>
-      <filename>Tal 007.m4a</filename>
-    </datafile>
-  </datafiles>
+  <datafiles number="1" name="datafiles"/>
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\snd_crack</sound>
@@ -48,6 +30,8 @@
     <sprite>sprites\s_bubble</sprite>
     <sprite>sprites\s_timebar</sprite>
     <sprite>sprites\s_lives</sprite>
+    <sprite>sprites\s_otherTimeBar</sprite>
+    <sprite>sprites\s_star</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -81,6 +65,7 @@
       <script>scripts\clone_keyboard.gml</script>
       <script>scripts\clone_safezone.gml</script>
     </scripts>
+    <script>scripts\get_starcount.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shade_bright.shader</shader>
@@ -113,10 +98,10 @@
   <rooms name="rooms">
     <room>rooms\lvl_1</room>
     <room>rooms\lvl_2</room>
+    <room>rooms\s_opening</room>
     <room>rooms\lvl_3</room>
     <room>rooms\lvl_4</room>
     <room>rooms\lvl_5</room>
-    <room>rooms\s_opening</room>
     <room>rooms\lvl_6</room>
     <room>rooms\lvl_7</room>
   </rooms>

@@ -113,6 +113,12 @@ if(instance_number(ctrl) &gt; 1){
           <argument>
             <kind>1</kind>
             <string>///Tick world and count.
+if(instance_exists(o_player) &amp;&amp; !o_player.dying){
+    timer--;
+}
+if(timer &lt;= 0){
+    timer = 0;
+}
 if(warping == 0){
     worldtick++;
     if(abs(worldtick) % 4 == 0){
@@ -320,6 +326,9 @@ time_energy = max_time_energy;
 
 time_warps = 5;
 max_time_warps = 5;
+
+timer = room_speed * 60 * 2;
+max_timer = room_speed * 60 * 2;
 </string>
           </argument>
         </arguments>
@@ -403,6 +412,9 @@ for(var i = 0; i &lt; ds_list_size(current); i++){
 draw_sprite(s_timebar,0,room_width/2,32 + 8);
 draw_sprite_part(s_timebar,1,0,0,512*(time_energy/max_time_energy),32,room_width/2  - 256,16 + 8 );
 
+draw_sprite(s_otherTimeBar,0,room_width/2,8+4);
+draw_sprite_part(s_otherTimeBar,1,0,0,512*(timer/max_timer),15,room_width/2  - 256,4 );
+
 for(var i = 0; i &lt; max_time_warps; i++){
     var basex, basey;
     basex = room_width / 2 - (max_time_warps * 16);
@@ -416,6 +428,7 @@ for(var i = 0; i &lt; time_warps; i++){
     basey = 64 + 8;
     draw_sprite(s_lives,0,basex + (32 + 8)*i,basey); 
 }
+
 </string>
           </argument>
         </arguments>
