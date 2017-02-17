@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0;
-count = 3;
+count = 8;
 </string>
           </argument>
         </arguments>
@@ -47,8 +47,7 @@ count = 3;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0] = room_speed * 5;
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -101,7 +100,7 @@ count--
 if(count &lt;= 0){
     alarm[4] = 5;
 }else{
-    alarm[3] = max(1,count / 15);
+    alarm[3] = max(1,count / 10);
 }
 </string>
           </argument>
@@ -131,7 +130,8 @@ o_car.image_index++;
 
 audio_play_sound(snd_boom,2,false);
 effect_create_above(ef_explosion,x + irandom(256) - 128,y + irandom(128),3,c_red);
-count = 100;
+audio_stop_sound(snd_canon);
+count = 57;
 alarm[3] = room_speed;
 </string>
           </argument>
@@ -186,7 +186,7 @@ else{
           <argument>
             <kind>1</kind>
             <string>image_xscale = -1;
-alarm[1] = room_speed;
+alarm[1] = room_speed * 1.25;
 </string>
           </argument>
         </arguments>

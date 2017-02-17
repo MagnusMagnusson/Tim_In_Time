@@ -28,6 +28,14 @@
             <string>updown = true;
 image_speed = 0;
 randomize();
+
+x -= 1000;
+o_tim.x -= 1000;
+o_lily.x -= 1000;
+
+done = true;
+
+audio_play_sound(snd_canon,1,false);
 </string>
           </argument>
         </arguments>
@@ -61,6 +69,19 @@ if(y &gt; ystart + 50* (1-image_index)){
 y += 1 * updown;
 o_lily.y += 1 * updown;
 o_tim.y += 1 * updown;
+
+
+if(x &lt; xstart){
+    x += 3;
+    o_tim.x += 3;
+    o_lily.x += 3;
+}
+else{
+    if(done){
+        done = false;
+        o_tim.alarm[0] = 5*room_speed;
+    }
+}
 </string>
           </argument>
         </arguments>

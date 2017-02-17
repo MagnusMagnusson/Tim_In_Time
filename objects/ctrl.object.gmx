@@ -204,7 +204,7 @@ if( instance_exists(o_player)){
             <kind>1</kind>
             <string>///First appearance
 if(worldtick == 0){
-    if(!instance_exists(o_player)){
+    if(!instance_exists(o_player) &amp;&amp; !instance_exists(dead_guy)){
         instance_create(o_player_here.x, o_player_here.y,o_player);
         with(o_player_here){
             instance_destroy();
@@ -393,13 +393,18 @@ for(var i = 0; i &lt; ds_list_size(current); i++){
 if(instance_exists(o_player) &amp;&amp; o_player.dying){
     draw_reset();
 }
-if(!instance_exists(o_player) &amp;&amp; !instance_exists(o_player_here) &amp;&amp; !alarm[1]){   
+if(!instance_exists(dead_guy) &amp;&amp; !instance_exists(o_player) &amp;&amp; !instance_exists(o_player_here) &amp;&amp; !alarm[1]){   
     draw_reset();
     room_goto_next();
 }
-if(!instance_exists(o_player) &amp;&amp; instance_exists(o_player_here)){
+if(!instance_exists(o_player) &amp;&amp; (instance_exists(o_player_here) || instance_exists(dead_guy))){
     draw_set_color(c_white);
-    draw_set_alpha(min(abs(worldtick)/(2*room_speed),1))
+    var temp;
+    temp = worldtick;
+    if(instance_exists(dead_guy)){
+        temp = min(worldtick,0)
+    }
+    draw_set_alpha(min(abs(temp)/(2*room_speed),1))
     draw_rectangle(0,0,room_width,room_height,false);
     draw_reset();
 }

@@ -27,6 +27,8 @@
     <sound>sound\snd_crack</sound>
     <sound>sound\snd_boom</sound>
     <sound>sound\snd_warp</sound>
+    <sound>sound\sound3</sound>
+    <sound>sound\snd_canon</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\s_tim</sprite>
@@ -43,6 +45,7 @@
     <sprite>sprites\sprite11</sprite>
     <sprite>sprites\s_puff</sprite>
     <sprite>sprites\s_heart</sprite>
+    <sprite>sprites\s_bubble</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -101,7 +104,9 @@
       <object>objects\o_car</object>
       <object>objects\o_tim</object>
       <object>objects\o_heart</object>
+      <object>objects\bubble</object>
     </objects>
+    <object>objects\dead_guy</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\s_opening</room>
