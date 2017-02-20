@@ -211,13 +211,6 @@ die()
           <argument>
             <kind>1</kind>
             <string>draw_self()
-draw_text(x - 16, y + 32,command);/*
-draw_text(x - 16, y + 48,vsped);
-draw_text(x - 16, y + 64,hsped);
-
-
-draw_text(x - 32, y + 32,birth);
-draw_text(x - 32, y + 16,death);*/
 </string>
           </argument>
         </arguments>

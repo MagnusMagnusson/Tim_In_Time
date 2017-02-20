@@ -59,11 +59,11 @@ audio_play_sound(snd_canon,1,false);
           <argument>
             <kind>1</kind>
             <string>if(y &lt; ystart - 50 * (1-image_index)){
-    updown = 1;
+    updown = 0.5;
 }
 
 if(y &gt; ystart + 50* (1-image_index)){
-    updown = -1;
+    updown = -0.5;
 }
 
 y += 1 * updown;
@@ -72,9 +72,9 @@ o_tim.y += 1 * updown;
 
 
 if(x &lt; xstart){
-    x += 3;
-    o_tim.x += 3;
-    o_lily.x += 3;
+    x += 1;
+    o_tim.x += 1;
+    o_lily.x += 1;
 }
 else{
     if(done){

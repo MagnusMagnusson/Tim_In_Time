@@ -32,10 +32,15 @@
     <sprite>sprites\s_lives</sprite>
     <sprite>sprites\s_otherTimeBar</sprite>
     <sprite>sprites\s_star</sprite>
+    <sprite>sprites\s_sgn</sprite>
+    <sprite>sprites\s_title</sprite>
+    <sprite>sprites\s_menubutton</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
     <background>background\background1</background>
+    <background>background\background2</background>
+    <background>background\background3</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -94,11 +99,15 @@
       <object>objects\bubble</object>
     </objects>
     <object>objects\dead_guy</object>
+    <object>objects\o_sgn</object>
+    <object>objects\o_title</object>
+    <object>objects\o_buttons</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_menu</room>
+    <room>rooms\s_opening</room>
     <room>rooms\lvl_1</room>
     <room>rooms\lvl_2</room>
-    <room>rooms\s_opening</room>
     <room>rooms\lvl_3</room>
     <room>rooms\lvl_4</room>
     <room>rooms\lvl_5</room>

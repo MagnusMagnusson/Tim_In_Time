@@ -324,8 +324,8 @@ audio_play_sound(snd_crack,2,false);
 max_time_energy  = room_speed * 10;
 time_energy = max_time_energy;
 
-time_warps = 5;
-max_time_warps = 5;
+time_warps = 6;
+max_time_warps = 6;
 
 timer = room_speed * 60 * 2;
 max_timer = room_speed * 60 * 2;
@@ -381,13 +381,7 @@ else{
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(0,0,worldtick);
-draw_text(0,32,ds_list_size(current));
-draw_text(0,48,instance_number(o_clone));
-for(var i = 0; i &lt; ds_list_size(current); i++){
-    draw_text(0,64 + 32*i,current[|i]);
-}
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
