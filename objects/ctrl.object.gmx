@@ -450,6 +450,7 @@ if(instance_exists(o_player) &amp;&amp; o_player.dying){
 }
 if(!instance_exists(dead_guy) &amp;&amp; !instance_exists(o_player) &amp;&amp; !instance_exists(o_player_here) &amp;&amp; !alarm[1]){   
     draw_reset();
+    save_stats();
     room_goto_next();
 }
 if(!instance_exists(o_player) &amp;&amp; (instance_exists(o_player_here) || instance_exists(dead_guy))){

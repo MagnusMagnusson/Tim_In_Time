@@ -8,13 +8,13 @@ file = file_bin_open(working_directory + "/save/progress.tim",1);
 with(level_ctrl){
     b0 = LEVELS & $ff;
     b1 = (LEVELS >> 8) & $ff;
-    file_bin_write_byte(file,lev1);
-    file_bin_write_byte(file,lev0);
+    file_bin_write_byte(file,b0);
+    file_bin_write_byte(file,b1);
     
     b0 = won & $ff;
     b1 = (won >> 8) & $ff;
-    file_bin_write_byte(file,lev1);
-    file_bin_write_byte(file,lev0);
+    file_bin_write_byte(file,b0);
+    file_bin_write_byte(file,b1);
     
     for(var i = 0; i < LEVELS; i++){
         for(var j = 0; i < 5; i++){

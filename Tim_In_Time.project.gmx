@@ -117,6 +117,7 @@
     <room>rooms\lvl_5</room>
     <room>rooms\lvl_6</room>
     <room>rooms\lvl_7</room>
+    <room>rooms\rm</room>
   </rooms>
   <constants number="14">
     <constant name="NORIGHT">-4</constant>
