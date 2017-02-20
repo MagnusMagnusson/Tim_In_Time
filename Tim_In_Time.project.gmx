@@ -35,6 +35,7 @@
     <sprite>sprites\s_sgn</sprite>
     <sprite>sprites\s_title</sprite>
     <sprite>sprites\s_menubutton</sprite>
+    <sprite>sprites\sprite22</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -71,6 +72,8 @@
       <script>scripts\clone_safezone.gml</script>
     </scripts>
     <script>scripts\get_starcount.gml</script>
+    <script>scripts\save_stats.gml</script>
+    <script>scripts\load_stats.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shade_bright.shader</shader>
@@ -102,6 +105,7 @@
     <object>objects\o_sgn</object>
     <object>objects\o_title</object>
     <object>objects\o_buttons</object>
+    <object>objects\level_ctrl</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_menu</room>
@@ -114,7 +118,7 @@
     <room>rooms\lvl_6</room>
     <room>rooms\lvl_7</room>
   </rooms>
-  <constants number="8">
+  <constants number="14">
     <constant name="NORIGHT">-4</constant>
     <constant name="NOLEFT">-3</constant>
     <constant name="NODOWN">-2</constant>
@@ -123,6 +127,12 @@
     <constant name="LEFT">3</constant>
     <constant name="DOWN">2</constant>
     <constant name="UP">1</constant>
+    <constant name="LEVELS">7</constant>
+    <constant name="STAT_TIME">0</constant>
+    <constant name="STAT_ENERGY">1</constant>
+    <constant name="STAT_WARPS">2</constant>
+    <constant name="STAT_CLOCKS">3</constant>
+    <constant name="STAT_STARS">4</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
