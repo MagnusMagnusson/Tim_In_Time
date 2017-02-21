@@ -1,12 +1,12 @@
 var r1,r2,r3;
 
-r1 = time_energy / max_time_energy;
-r2 = time_warps / max_time_warps;
-r3 = timer / max_timer;
+r1 = ctrl.time_energy / ctrl.max_time_energy;
+r2 = ctrl.time_warps / ctrl.max_time_warps;
+r3 = ctrl.timer / ctrl.max_timer;
 
 var STAR;
-STAR = r1+r2+r3;
-STAR *= 10;
+STAR = (r1+r2+r3)/3;
+STAR *= 6;
 
 STAR = round(STAR);
-return clamp(STAR,0,6);
+return clamp(STAR,0,5);

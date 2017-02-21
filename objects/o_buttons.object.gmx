@@ -60,11 +60,22 @@ image_speed = 0;
             <kind>1</kind>
             <string>switch(option){
     case 0:{
-        room_goto_next();
+        var levelstring;
+        levelstring = "lvl_";
+        levelstring += string(level_ctrl.won + 1);
+        var rom;
+        rom = asset_get_index(levelstring);
+        if(rom == -1 || rom == lvl_1){
+            room_goto_next();
+        }
+        else{
+            instance_create(0,0,ctrl);
+            room_goto(rom);
+        }
         break;
     }
     case 1:{
-        show_message("Level select not implemented");
+        room_goto(rm_level_select);
         break;
     }
     case 2:{

@@ -72,8 +72,10 @@
       <script>scripts\clone_safezone.gml</script>
     </scripts>
     <script>scripts\get_starcount.gml</script>
+    <script>scripts\script19.gml</script>
     <script>scripts\save_stats.gml</script>
     <script>scripts\load_stats.gml</script>
+    <script>scripts\mouse_in_area.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shade_bright.shader</shader>
@@ -81,6 +83,7 @@
   <fonts name="fonts">
     <font>fonts\fnt_big</font>
     <font>fonts\fnt_default</font>
+    <font>fonts\fnt_consola</font>
   </fonts>
   <objects name="objects">
     <object>objects\o_player</object>
@@ -106,10 +109,12 @@
     <object>objects\o_title</object>
     <object>objects\o_buttons</object>
     <object>objects\level_ctrl</object>
+    <object>objects\o_starcounter</object>
+    <object>objects\o_lvl_select</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_menu</room>
-    <room>rooms\s_opening</room>
+    <room>rooms\rm_level_select</room>
     <room>rooms\lvl_1</room>
     <room>rooms\lvl_2</room>
     <room>rooms\lvl_3</room>
@@ -117,7 +122,7 @@
     <room>rooms\lvl_5</room>
     <room>rooms\lvl_6</room>
     <room>rooms\lvl_7</room>
-    <room>rooms\rm</room>
+    <room>rooms\s_opening</room>
   </rooms>
   <constants number="14">
     <constant name="NORIGHT">-4</constant>

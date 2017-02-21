@@ -1,9 +1,13 @@
 var file,b0,b1;
 if(file_exists(working_directory + "/save/progress.tim")){
     file_copy(working_directory + "/save/progress.tim","backup.tim")
-    file_delete(working_directory + "/save/progress.tim")
 }
-file = file_bin_open(working_directory + "/save/progress.tim",1);
+file = file_bin_open(working_directory + "/save/progress.tim",2);
+file_bin_rewrite(file);
+
+var s; 
+s = 5 + 5*LEVELS;
+file_bin_write_byte(file,s);
 
 with(level_ctrl){
     b0 = LEVELS & $ff;
@@ -17,10 +21,12 @@ with(level_ctrl){
     file_bin_write_byte(file,b1);
     
     for(var i = 0; i < LEVELS; i++){
-        for(var j = 0; i < 5; i++){
-            file_bin_write_byte(file,stats[i,j]);
+        for(var j = 0; j < 5; j++){
+            b0 = stats[i,j] & $ff;
+            b1 = (stats[i,j] >> 8) & $ff;
+            file_bin_write_byte(file,b0);
+            file_bin_write_byte(file,b1);
         }
     }
 }
-
 file_bin_close(file);

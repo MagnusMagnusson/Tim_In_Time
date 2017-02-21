@@ -57,6 +57,9 @@ dying = false;
     with(o_player){
         dying = true;
     }
+    if(!instance_exists(o_starcounter)){
+        instance_create(room_width / 2, room_height / 2 - 128, o_starcounter);
+    }
 }
 
 if(instance_exists(o_player) &amp;&amp; o_player.dying){

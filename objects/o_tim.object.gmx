@@ -131,7 +131,7 @@ o_car.image_index++;
 audio_play_sound(snd_boom,2,false);
 effect_create_above(ef_explosion,x + irandom(256) - 128,y + irandom(128),3,c_red);
 audio_stop_sound(snd_canon);
-count = 65;
+count = 45;
 alarm[3] = room_speed*1.5;
 </string>
           </argument>

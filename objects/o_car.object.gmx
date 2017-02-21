@@ -35,7 +35,6 @@ o_lily.x -= 1000;
 
 done = true;
 
-audio_play_sound(snd_canon,1,false);
 </string>
           </argument>
         </arguments>

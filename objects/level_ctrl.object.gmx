@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -26,13 +26,22 @@
           <argument>
             <kind>1</kind>
             <string>won = 0;
-for(var i = 0; i &lt; LEVELS; i++){
+for(var i = 0; i &lt; LEVELS+1; i++){
     stats[i,STAT_TIME] = 0;
     stats[i,STAT_ENERGY] = 0;
     stats[i,STAT_WARPS] = 0;
     stats[i,STAT_CLOCKS] = 0;
     stats[i,STAT_STARS] = 0;
 }
+
+load_stats();
+keyMap[lvl_1] = 1;
+keyMap[lvl_2] = 2;
+keyMap[lvl_3] = 3;
+keyMap[lvl_4] = 4;
+keyMap[lvl_5] = 5;
+keyMap[lvl_6] = 6;
+keyMap[lvl_7] = 7;
 </string>
           </argument>
         </arguments>
