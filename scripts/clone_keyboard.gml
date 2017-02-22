@@ -24,10 +24,23 @@ if(birth == clock){
     }
 
 if(death == clock){
-    audio_play_sound(snd_warp,2,false);
-    repeat(100){
-            effect_create_above(ef_spark,x + irandom(64),  y + irandom(128),irandom(3),c_white)
+    if(false/*point_distance(deathx,deathy,x,y) > 400 && !dying*/){
+        kill(id);        
+        audio_play_sound(snd_warp,2,false);
+        repeat(33){
+            audio_play_sound(snd_boom,2,false);
         }
+        repeat(100){
+                effect_create_above(ef_explosion,x + irandom(64),  y + irandom(128),irandom(3),choose(1,1,0)*c_white)
+        }
+        return 0;
+    }
+    else{
+        audio_play_sound(snd_warp,2,false);
+        repeat(100){
+                effect_create_above(ef_spark,x + irandom(64),  y + irandom(128),irandom(3),c_white)
+            }
+    }
     visible = false;
 }
     

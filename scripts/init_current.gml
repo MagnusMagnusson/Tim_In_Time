@@ -14,6 +14,8 @@ i.controller = clones[|i.ID];
 i.mypath = o_player.mypath;
 i.originx = o_player.originx;
 i.originy = o_player.originy;
+i.deathx = o_player.x;
+i.deathy = o_player.y;
 i.birth = o_player.birth;
 i.death = ctrl.worldtick;
 

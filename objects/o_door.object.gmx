@@ -28,6 +28,7 @@
             <string>image_speed = 0;
 image_blend = c_red
 open = false;
+mode = true;
 </string>
           </argument>
         </arguments>
@@ -50,7 +51,7 @@ open = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(open){
+            <string>if(open ^^ !mode){
     image_index = min(image_index+1,image_number - 1)
 }
 else{

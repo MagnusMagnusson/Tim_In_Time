@@ -30,6 +30,12 @@ image_speed = 0;
 image_index = 1;
 
 alarm[0] = room_speed * 5;
+
+
+if(!audio_is_playing(snd_battlebug)){
+    audio_stop_all();
+    audio_play_sound(snd_battlebug,1,true);   
+}
 </string>
           </argument>
         </arguments>

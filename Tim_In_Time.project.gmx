@@ -11,6 +11,8 @@
     <sound>sound\snd_warp</sound>
     <sound>sound\sound3</sound>
     <sound>sound\snd_canon</sound>
+    <sound>sound\Clean_Soul</sound>
+    <sound>sound\snd_battlebug</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\s_tim</sprite>
@@ -24,7 +26,7 @@
     <sprite>sprites\sprite7</sprite>
     <sprite>sprites\sprite8</sprite>
     <sprite>sprites\sprite9</sprite>
-    <sprite>sprites\sprite11</sprite>
+    <sprite>sprites\s_car</sprite>
     <sprite>sprites\s_puff</sprite>
     <sprite>sprites\s_heart</sprite>
     <sprite>sprites\s_bubble</sprite>
@@ -36,6 +38,7 @@
     <sprite>sprites\s_title</sprite>
     <sprite>sprites\s_menubutton</sprite>
     <sprite>sprites\sprite22</sprite>
+    <sprite>sprites\s_coin</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -76,6 +79,7 @@
     <script>scripts\save_stats.gml</script>
     <script>scripts\load_stats.gml</script>
     <script>scripts\mouse_in_area.gml</script>
+    <script>scripts\get_room_requirements.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shade_bright.shader</shader>
@@ -100,6 +104,7 @@
     <objects name="cutscene">
       <object>objects\o_lily</object>
       <object>objects\o_car</object>
+      <object>objects\sad_car</object>
       <object>objects\o_tim</object>
       <object>objects\o_heart</object>
       <object>objects\bubble</object>
@@ -111,10 +116,13 @@
     <object>objects\level_ctrl</object>
     <object>objects\o_starcounter</object>
     <object>objects\o_lvl_select</object>
+    <object>objects\smokeSpawn</object>
+    <object>objects\o_coin</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\lvl_10</room>
     <room>rooms\rm_menu</room>
-    <room>rooms\rm_level_select</room>
+    <room>rooms\s_opening</room>
     <room>rooms\lvl_1</room>
     <room>rooms\lvl_2</room>
     <room>rooms\lvl_3</room>
@@ -122,7 +130,9 @@
     <room>rooms\lvl_5</room>
     <room>rooms\lvl_6</room>
     <room>rooms\lvl_7</room>
-    <room>rooms\s_opening</room>
+    <room>rooms\lvl_8</room>
+    <room>rooms\lvl_9</room>
+    <room>rooms\rm_level_select</room>
   </rooms>
   <constants number="14">
     <constant name="NORIGHT">-4</constant>
@@ -133,7 +143,7 @@
     <constant name="LEFT">3</constant>
     <constant name="DOWN">2</constant>
     <constant name="UP">1</constant>
-    <constant name="LEVELS">7</constant>
+    <constant name="LEVELS">9</constant>
     <constant name="STAT_TIME">0</constant>
     <constant name="STAT_ENERGY">1</constant>
     <constant name="STAT_WARPS">2</constant>
