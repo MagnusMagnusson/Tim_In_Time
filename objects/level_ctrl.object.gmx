@@ -33,7 +33,6 @@ for(var i = 0; i &lt; LEVELS+1; i++){
     stats[i,STAT_CLOCKS] = 0;
     stats[i,STAT_STARS] = 0;
 }
-audio_play_sound(snd_canon,1,true);
 load_stats();
 keyMap[lvl_1] = 1;
 keyMap[lvl_2] = 2;
@@ -42,6 +41,14 @@ keyMap[lvl_4] = 4;
 keyMap[lvl_5] = 5;
 keyMap[lvl_6] = 6;
 keyMap[lvl_7] = 7;
+keyMap[lvl_8] = 8;
+keyMap[lvl_9] = 9;
+keyMap[lvl_10] = 10;
+
+if(!audio_is_playing(snd_canon)){
+    audio_stop_all();
+    audio_play_sound(snd_canon,1,true);
+}
 </string>
           </argument>
         </arguments>

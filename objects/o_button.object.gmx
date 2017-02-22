@@ -30,7 +30,7 @@ image_blend = c_red
 link = 0;
 
 
-alarm[0] = 2;
+alarm[0] = 6;
 </string>
           </argument>
         </arguments>
@@ -53,10 +53,11 @@ alarm[0] = 2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(link) exit;
-with(o_door){
-    if(image_blend = other.image_blend){
-        other.link = id;
+            <string>if(!instance_exists(link)){
+    with(o_door){
+        if(image_blend == other.image_blend){
+            other.link = id;
+        }
     }
 }
 </string>

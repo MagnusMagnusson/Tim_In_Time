@@ -67,6 +67,8 @@ if(mouse_check_button_pressed(mb_left)){
             var rom;
             rom = asset_get_index(lstring){
                 if(rom != -1){
+                    audio_stop_all();
+                    audio_play_sound(snd_memory,1,true);
                     instance_create(0,0,ctrl);
                     room_goto(rom);
                 }
@@ -152,9 +154,14 @@ draw_set_color(0);
 var xloc = room_width div 2;
 if(selected &gt; -1){
     if(done){
-        draw_text(xloc,128,"Most Time Left: " +string((time / room_speed) div 60) + " Minutes "+string((time / room_speed) % 60) + " Seconds ");
-        draw_text(xloc,128 + 32,"Most Time Travel Unused: " +string(((energy*4) / room_speed)) + " Seconds ");
-        draw_text(xloc,128 + 64,"Most Warps Left: " +string(warps) + " Warps.");
+        var lstring;
+        lstring = "lvl_";
+        lstring += string(1+selected);
+        var req;
+        req = get_room_requirements(asset_get_index(lstring));
+        draw_text(xloc,128,"Shortest Time: " +string(((-time + req[0]) / room_speed) div 60) + " Minutes "+string(((-time+ req[0]) / room_speed) % 60) + " Seconds ");
+        draw_text(xloc,128 + 32,"Least Time Spent Warping: " +string((((-energy +req[1])*4) / room_speed)) + " Seconds ");
+        draw_text(xloc,128 + 64,"Fewest Warps: " +string(-warps+ req[2]) + " Warps.");
         draw_sprite(s_star,0,xloc,32);
         var r,width,height;
         width = 320;
@@ -164,9 +171,9 @@ if(selected &gt; -1){
     }
     else{        
         draw_sprite(s_star,0,xloc,32);
-        draw_text(xloc,128,"Most Time Left: ???");
-        draw_text(xloc,128 + 32,"Most Energy Left: ???");
-        draw_text(xloc,128 + 64,"Most Warps Left: ???");   
+        draw_text(xloc,128,"Shortest Time: ???");
+        draw_text(xloc,128 + 32,"Least Time Spent Warping: ???");
+        draw_text(xloc,128 + 64,"Fewest Warps: ???");   
     }
 }
 else{

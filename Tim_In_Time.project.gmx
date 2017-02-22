@@ -12,7 +12,7 @@
     <sound>sound\sound3</sound>
     <sound>sound\snd_canon</sound>
     <sound>sound\Clean_Soul</sound>
-    <sound>sound\snd_battlebug</sound>
+    <sound>sound\snd_memory</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\s_tim</sprite>
@@ -45,6 +45,7 @@
     <background>background\background1</background>
     <background>background\background2</background>
     <background>background\background3</background>
+    <background>background\background4</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -80,6 +81,7 @@
     <script>scripts\load_stats.gml</script>
     <script>scripts\mouse_in_area.gml</script>
     <script>scripts\get_room_requirements.gml</script>
+    <script>scripts\warp_create.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shade_bright.shader</shader>
@@ -118,9 +120,11 @@
     <object>objects\o_lvl_select</object>
     <object>objects\smokeSpawn</object>
     <object>objects\o_coin</object>
+    <object>objects\o_warning</object>
+    <object>objects\btn_back</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\lvl_10</room>
+    <room>rooms\rm_warning</room>
     <room>rooms\rm_menu</room>
     <room>rooms\s_opening</room>
     <room>rooms\lvl_1</room>
@@ -132,6 +136,7 @@
     <room>rooms\lvl_7</room>
     <room>rooms\lvl_8</room>
     <room>rooms\lvl_9</room>
+    <room>rooms\lvl_10</room>
     <room>rooms\rm_level_select</room>
   </rooms>
   <constants number="14">
@@ -143,7 +148,7 @@
     <constant name="LEFT">3</constant>
     <constant name="DOWN">2</constant>
     <constant name="UP">1</constant>
-    <constant name="LEVELS">9</constant>
+    <constant name="LEVELS">10</constant>
     <constant name="STAT_TIME">0</constant>
     <constant name="STAT_ENERGY">1</constant>
     <constant name="STAT_WARPS">2</constant>

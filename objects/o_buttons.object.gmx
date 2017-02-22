@@ -69,6 +69,8 @@ image_speed = 0;
             room_goto_next();
         }
         else{
+            audio_stop_all();
+            audio_play_sound(snd_memory,1,true);
             instance_create(0,0,ctrl);
             room_goto(rom);
         }
