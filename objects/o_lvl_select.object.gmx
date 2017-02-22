@@ -101,7 +101,7 @@ draw_reset();
             <kind>1</kind>
             <string>draw_set_font(fnt_consola);
 var selected = -1;
-for(var i = 0; i &lt; 5*LEVELS; i++){
+for(var i = 0; i &lt; LEVELS; i++){
     innerc = c_dkgray;
     outerc = c_gray;
     tc = c_white;

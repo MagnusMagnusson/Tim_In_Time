@@ -82,6 +82,7 @@
     <script>scripts\mouse_in_area.gml</script>
     <script>scripts\get_room_requirements.gml</script>
     <script>scripts\warp_create.gml</script>
+    <script>scripts\door_open.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shade_bright.shader</shader>
@@ -100,6 +101,7 @@
     <object>objects\o_player_here</object>
     <object>objects\o_button</object>
     <object>objects\o_door</object>
+    <object>objects\o_lockDoor</object>
     <object>objects\you_died</object>
     <object>objects\o_updown</object>
     <object>objects\o_stopper</object>
@@ -137,6 +139,7 @@
     <room>rooms\lvl_8</room>
     <room>rooms\lvl_9</room>
     <room>rooms\lvl_10</room>
+    <room>rooms\lvl_11</room>
     <room>rooms\rm_level_select</room>
   </rooms>
   <constants number="14">
@@ -148,7 +151,7 @@
     <constant name="LEFT">3</constant>
     <constant name="DOWN">2</constant>
     <constant name="UP">1</constant>
-    <constant name="LEVELS">10</constant>
+    <constant name="LEVELS">11</constant>
     <constant name="STAT_TIME">0</constant>
     <constant name="STAT_ENERGY">1</constant>
     <constant name="STAT_WARPS">2</constant>

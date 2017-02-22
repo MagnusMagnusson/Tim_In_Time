@@ -44,6 +44,7 @@ keyMap[lvl_7] = 7;
 keyMap[lvl_8] = 8;
 keyMap[lvl_9] = 9;
 keyMap[lvl_10] = 10;
+keyMap[lvl_11] = 10;
 
 if(!audio_is_playing(snd_canon)){
     audio_stop_all();
